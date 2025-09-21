@@ -40,7 +40,7 @@ httpx
 Make sure you have:
 
 ```python
-import httpx
+import httpx , json
 ```
 
 If not, add it.
@@ -215,5 +215,5 @@ from info import STREAM_FILES_CHANNEL_ID
 
 ---
 
-✅ Done! Now your AutoFilter bot has streaming links without needing any extra server or hosting.
+:) Done! Now your AutoFilter bot has streaming links without needing any extra server or hosting.
 
