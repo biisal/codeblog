@@ -5,8 +5,9 @@ You don’t need to host your streaming bot on any server. This way your AutoFil
 ### Steps to follow:
 
 ---
+### 0. Make a new private channel called `STREAM_FILES_CHANNEL`.
 
-### 1. Add these bots to your database channel
+### 1. Add these bots to your STREAM_FILES_CHANNEL 
 * [@filestream_bot](https://t.me/filestream_bot)
 * [@cl1to5bot](https://t.me/cl1to5bot)
 * [@cl2to5bot](https://t.me/cl1to5bot)
@@ -126,7 +127,7 @@ a = await client.send_cached_media(
 
 ```python
 btn = [[
-    InlineKeyboardButton("Streaming Link", url=await get_stream_link(BIN_CHANNEL_ID, file_msg.id, "https://a.random.link")),
+    InlineKeyboardButton("Streaming Link", url=await get_stream_link(STREAM_FILES_CHANNEL_ID, file_msg.id, "https://a.random.link")),
 ]]
 ...
 a = await client.send_cached_media(
@@ -144,7 +145,7 @@ a = await client.send_cached_media(
 ```python
 btn = [[
     InlineKeyboardButton("Old Button", url="http://example.com"),
-    InlineKeyboardButton("Streaming Link", url=await get_stream_link(BIN_CHANNEL_ID, file_msg.id, "https://a.random.link")),
+    InlineKeyboardButton("Streaming Link", url=await get_stream_link(STREAM_FILES_CHANNEL_ID, file_msg.id, "https://a.random.link")),
 ]]
 ...
 a = await client.send_cached_media(
@@ -163,13 +164,13 @@ Above your button code, add this:
 
 ```python
 file_msg = await client.send_cached_media(
-    chat_id=BIN_CHANNEL_ID,
+    chat_id=STREAM_FILES_CHANNEL_ID,
     file_id=file.file_id,
     caption=f_caption,
 )
 btn = [[
     InlineKeyboardButton("Old Button", url="http://example.com"),
-    InlineKeyboardButton("Streaming Link", url=await get_stream_link(BIN_CHANNEL_ID, file_msg.id, "https://a.random.link")),
+    InlineKeyboardButton("Streaming Link", url=await get_stream_link(STREAM_FILES_CHANNEL_ID, file_msg.id, "https://a.random.link")),
 ]]
 ```
 
@@ -179,13 +180,13 @@ btn = [[
 
 ```python
 file_msg = await client.send_cached_media(
-    chat_id=BIN_CHANNEL_ID,
+    chat_id=STREAM_FILES_CHANNEL_ID,
     file_id=file.file_id,
     caption=f_caption,
 )
 btn = [[
     InlineKeyboardButton("Old Button", url="http://example.com"),
-    InlineKeyboardButton("Streaming Link", url=await get_stream_link(BIN_CHANNEL_ID, file_msg.id, "https://a.random.link")),
+    InlineKeyboardButton("Streaming Link", url=await get_stream_link(STREAM_FILES_CHANNEL_ID, file_msg.id, "https://a.random.link")),
 ]]
 a = await client.send_cached_media(
     chat_id=message.from_user.id,
@@ -200,7 +201,7 @@ a = await client.send_cached_media(
 ### 12. Add BIN channel ID in `info.py` or `var.py`
 
 ```python
-BIN_CHANNEL_ID = 123456789
+STREAM_FILES_CHANNEL_ID = 123456789
 ```
 
 ---
@@ -209,7 +210,7 @@ BIN_CHANNEL_ID = 123456789
 
 ```python
 import httpx
-from info import BIN_CHANNEL_ID
+from info import STREAM_FILES_CHANNEL_ID
 ```
 
 ---
