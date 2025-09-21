@@ -82,7 +82,7 @@ async def get_stream_link(channel_id: int, message_id: int, fallback_link: str) 
     if not all([msg_id, ch_id, hash_val]):
         return fallback_link
 
-    return f"{bsse_url}/{ch_id}/{msg_id}?hash={hash_val}"
+    return f"{bsse_url}/watch/{ch_id}/{msg_id}?hash={hash_val}"
 ```
 
 ---
